@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins' , sans-serif;
+    box-sizing: border-box;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+#back{
+    height: 100%;
+    width: 100%;
+}
+
+/* navigation bar */
+
+nav .navbar{
+    z-index: 9;
+    position: absolute;
+    background: transparent;
+    height: 80px;
+    width: 100%;
+}
+nav .navbar label.logo{
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+nav .navbar ul{
+     float: right;
+     margin-right: 20px;
+     text-decoration: none;
+ }
+
+nav .navbar ul li{
+     display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav .navbar ul li a{
+    color:  rgb(255, 255, 255);
+    font-size: 17px;
+    font-weight: semibold;
+    text-decoration: none;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+nav .navbar ul li a.active, a:hover{
+    background: rgb(46, 154, 255) ;
+    transition: .5s;
+}
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+
+}
+#check {
+    display: none;
+}
+
+@media (max-width: 952px){
+    nav .navbar label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav .navbar ul li a {
+        font-size: 16px;
+    }
+}
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: transparent ;
+        top: 80px;
+        left: -100;
+        text-align: center;
+        transition: all .5s;
+
+    }
+    nav .navbar ul li{
+        display: block ;
+        margin: 50px 0;
+        line-height: 30px  ;
+    }
+    nav .navbar ul li a {
+        font-size: 20px;
+    }
+    a:hover, a.active {
+        background: none;
+        color:  rgb(61, 161, 255);
+        transition: .5s;
+    }
+    #check:checked ~ ul  {
+          left: 0;
+    }
+}
+
+/* Imageslider */
+
+.slide {
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    overflow: hidden;
+    background-color: #000;
+}
+ 
+.slide .slideshow-item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    animation: cycleImages 31s infinite;
+}
+
+.slide .slideshow-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoom 31s infinite;
+}
+
+.slide .slideshow-item:nth-child(1),
+.slide .slideshow-item:nth-child(1) img{
+    animation-delay: 0s;
+}
+
+.slide .slideshow-item:nth-child(2),
+.slide .slideshow-item:nth-child(2) img{
+    animation-delay: 10s;
+}
+.slide .slideshow-item:nth-child(3),
+.slide .slideshow-item:nth-child(3) img{
+    animation-delay: 20s;
+}
+
+.slide .slideshow-item-text {
+    max-width: 40%;
+    position: absolute;
+    top: 60%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,.8);
+    color: #fff;
+    padding: 3rem 2rem;
+}
+
+.slide .slideshow-item-text h5{
+    font-size: 3rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+
+.slide .slideshow-item-text p{
+    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+@keyframes cycleImages{
+    25%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 0;
+    }
+}
+@keyframes zoom {
+    100%{
+        transform: scale(1.3);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .slide .slideshow-item-text {
+        max-width: 70%;
+        padding: 2rem 1rem;
+    }
+    .slide .slideshow-item-text h5 {
+        font-size: 2rem;
+    }   
+}
+@media screen and (max-width: 767px) {
+    .slide .slideshow-item-text {
+        max-width: 100%;
+        padding: .9rem ;
+        top: initial;
+        bottom: 0;
+        transform: initial;
+    }
+    .slide .slideshow-item-text p {
+        font-size: 1rem;
+    }
+    
+}
+
+/* second screen */
+
+.heading{
+    font-size: 22px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold; 
+}
+
+.plan-grid{
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: auto auto;
+    padding: 20px;
+}
+
+.plan-grid img{
+    height: 500px;
+    width: 600px;
+}
+
+/* Third Screen */
+
+#gallery-grid{
+    height: 90vh;
+    width: auto;
+    padding: 20px;
+    overflow: scroll;
+    margin-right: 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    max-width: 33.3%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    filter: grayscale(1) brightness(0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s linear;
+  }
+  .column img:hover {
+    filter: grayscale(0);
+  }
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+    .column img {
+      filter: grayscale(0) brightness(1);
+    }
+  }
+
+/* Fouth Screen */
+
+section{
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    min-height: 90vh;
+}
+section::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+}
+section .container{
+    position: relative;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    z-index: 1000;
+    margin-bottom: 70px;
+}
+section .container .contactInfo{
+
+    position: relative;
+    top: 40px;
+    width: 350px;
+    height: calc(100% -8px);
+    background: #0f3959;
+    z-index: 5;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+section .container .contactInfo h2{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+}
+section .container .contactInfo .info{
+    position: relative;
+    margin: 20px 0;
+}
+section .container .contactInfo .info li{
+    position: relative;
+    list-style: none;
+    display: flex;
+    margin: 20px 0;
+    cursor: pointer;
+    align-items: flex-start;
+}
+section .container .contactInfo .info li span:nth-child(1){
+    width: 30px;
+    min-width: 30px;
+}
+section .container .contactInfo .info li span:nth-child(1) img{
+    max-width: 100%;
+    filter: invert(1);
+    opacity: 0.5;
+}
+section .container .contactInfo .info li span:nth-child(2){
+    color: #fff;
+    margin-left: 10px;
+    font-weight: 300;
+    opacity: 0.5;
+}
+section .container .contactInfo .info li:hover span:nth-child(2),
+section .container .contactInfo .info li:hover span:nth-child(1) img{
+    opacity: 1;
+}
+section .container .contactInfo .sci{
+    position: relative;
+    display: flex;
+}
+section .container .contactInfo .sci li{
+    list-style: none;
+    margin-right: 15px;
+}
+section .container .contactInfo .sci li a{
+    text-decoration: none;
+}
+section .container .contactInfo .sci li a img{
+    filter: invert(1);
+    opacity: 0.5;
+    height: 20px;
+    width: 20px;
+}
+section .container .contactInfo .sci li:hover a img{
+    opacity: 1;
+}
+section .container .contactForm{
+    z-index: -100;
+    position: absolute;
+    padding: 70px 50px;
+    margin-left: 150px;
+    margin-top: -50px;
+    padding-left: 250px;
+    width: 70vw;
+    height: 100%;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.2);
+} 
+section .container .contactForm h2{
+    color: #000;
+} 
+section .container .contactForm .formBox{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+section .container .contactForm .formBox .inputBox{
+    position: relative;
+    margin: 0 0 35px 0;
+}
+section .container .contactForm .formBox .inputBox .w50{
+    width: 47%;
+}
+section .container .contactForm .formBox .inputBox .w100{
+    width: 100%;
+}
+section .container .contactForm .formBox .inputBox input, textarea{
+    width: 100% !important; 
+    padding: 5px 0;
+    font-size: 18px;
+    resize: none;
+    font-weight: 300;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #777;
+    outline: none;
+}
+section .container .contactForm .formBox .inputBox textarea{
+    min-height: 120px;
+}
+section .container .contactForm .formBox .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    transition: 0.5s;
+    pointer-events: none;
+}
+section .container .contactForm .formBox .inputBox input:focus ~ span,
+section .container .contactForm .formBox .inputBox textarea:focus ~ span,
+section .container .contactForm .formBox .inputBox input:valid ~ span,
+section .container .contactForm .formBox .inputBox textarea:valid ~ span{
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #2e9aff;
+}
+section .container .contactForm .formBox .inputBox input[type="submit"]{
+    position: relative;
+    cursor: pointer;
+    background: #0f3959;
+    color: #fff;
+    border: none;
+    min-width: 150px;
+    max-width: 150px;
+    padding: 12px;
+}
+section .container .contactForm .formBox .inputBox input[type="submit"]:hover{
+    background: #2e9aff;
+}
+
